@@ -40,7 +40,7 @@ node{
 	stage('Start Services'){
 		if ("${env.DO_INSTALL}" == 'true' ){
 	    echo 'Start Services'
-		  su('sudo systemctl start indiwebservice')
+		  sh('sudo systemctl start indiwebservice')
 		}
 	}
 }
