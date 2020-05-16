@@ -1,3 +1,6 @@
+
+
+node{
 properties([
   parameters([
     booleanParam(name: 'MERGE_UPSTREAM', defaultValue: false, description: '' )
@@ -6,8 +9,6 @@ properties([
 		string(name: 'BRANCH_TO_FETCH', defaultValue: 'master', description: '' )
    ])
 ])
-
-node{
     stage('init'){
 			  
 			  echo 'Do Checkout'
