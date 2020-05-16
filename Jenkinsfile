@@ -3,9 +3,9 @@
 node{
 properties([
   parameters([
-    booleanParam(name: 'MERGE_UPSTREAM', defaultValue: false, description: '' )
-		booleanParam(name: 'DO_BUILD', defaultValue: false, description: '' )
-		boolenParam(name: 'DO_INSTALL', defaultValue: false, description: '' )
+		choice(name: 'MERGE_UPSTREAM', choices: ['false','true']‚: '' )
+		choice(name: 'DO_BUILD', choices: ['true','false'], description: '' )
+		choice(name: 'DO_INSTALL', choices: ['true','false'], description: '' )
 		string(name: 'BRANCH_TO_FETCH', defaultValue: 'master', description: '' )
    ])
 ])
