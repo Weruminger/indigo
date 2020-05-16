@@ -1,6 +1,7 @@
 node{
     stage('init'){
-			
+			  
+			  echo 'Do Checkout'
         
 			  checkout([$class: 'GitSCM', 
 									branches: [[name: '*/master']], 
