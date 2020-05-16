@@ -8,9 +8,7 @@ node{
 									extensions: [], 
 									submoduleCfg: [], 
 									userRemoteConfigs: [[credentialsId: 'GitHubWerumingerI', 
-																			 url: '']]])
-			
-			
+																			 url: 'https://github.com/Weruminger/indigo.git']]])
         echo 'hello World'
     }
 }
