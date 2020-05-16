@@ -29,7 +29,7 @@ node{
 	stage('Stop Services'){
 		if ("${env.DO_INSTALL}" == 'true' ){
  		   echo 'TODO stop services'
-		   sh('sudo systemctl indiwebmanager stop')
+		   sh('sudo systemctl stop indiwebmanager')
 		}
 	}
 	stage('Install'){
@@ -40,7 +40,7 @@ node{
 	stage('Start Services'){
 		if ("${env.DO_INSTALL}" == 'true' ){
 	    echo 'Start Services'
-		  su('sudo systemctl indiwebservice start')
+		  su('sudo systemctl start indiwebservice')
 		}
 	}
 }
