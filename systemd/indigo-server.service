@@ -1,0 +1,12 @@
+[Unit]
+Description=Indigo server
+
+[Service]
+User=astroberry
+PAMName=login
+ExecStart=/usr/local/bin/indigo_server --enable-rpi-management
+StandardOutput=file:/home/astroberry/indigo.log
+StandardError=file:/home/astroberry/indigo.log
+
+[Install]
+WantedBy=multi-user.target
