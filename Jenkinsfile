@@ -29,8 +29,16 @@ node{
 	stage('Stop Services'){
 		if ("${env.DO_INSTALL}" == 'true' ){
  		   echo 'TODO stop services'
-		   sh('sudo systemctl stop indigo')
-		   sh('sudo systemctl stop indigo-environment')
+		   try{
+		       sh('sudo systemctl stop indigo-server')
+		   }catch(exc){}
+		   try{
+		   
+	    	   sh('sudo systemctl stop indigo')
+		   }catch(exc){}
+		   try{
+    		   sh('sudo systemctl stop indigo-environment')
+		   }catch(exc){}
 		}
 	}
 	stage('Install'){
@@ -43,6 +51,7 @@ node{
 	    echo 'Start Services'
 		  sh('sudo systemctl start indigo-environment')
 		  sh('sudo systemctl start indigo')
+		  sh('sudo systemctl start indigo-server')
 		}
 	}
 }
